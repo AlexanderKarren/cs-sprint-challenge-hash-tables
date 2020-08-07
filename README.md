@@ -23,11 +23,32 @@ Commit your code regularly and meaningfully. This practice helps both you (in ca
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your answers beforehand.
 
 1. Hashing functions
+
+The idea behind a hashing table is to put in a string and use a complex mathematical operation (usually involving a bitwise operation) to produce a long, unique integer to be used for an index. After the item is in an array, the hashing function can be used to produce the index again for constant access to an item.
+
 2. Collision resolution
+
+Collisions can be avoided through a couple of methods:
+- Linked nodes. Using a simple linked list, if a collision occurs, an item can be placed at the same index as another item by pointing the original node to it.
+- Automatic resizing (see below)
+
 3. Performance of basic hash table operations
+
+With a larger list, accessing and updating items in a linked list should be done in O(1) time. With more collisions, the performance will be worse, but this issue can be subdued by implementing automatic resizing (see below) which should reduce the amount of linked nodes at one index. Many linked nodes at one index (many collisions) means that the program will need to go into a loop to access values.
+
 4. Load factor
+
+Load factor can be calculated by dividing the number of active elements by the number of open slots (length of the array.) This can be used to provide the program with a threshold for automatic resizing (see below.)
+
 5. Automatic resizing
+
+Automatic resizing is a program implementation that allows the array to be lengthened or shortened and the indices reallocated when the load factor (see above) goes above or below a certain threshold. In theory, the larger a list is, the fewer potential collisions.
+
 6. Various use cases for hash tables
+
+- Hash tables can be used as a cache for performance-heavy recursive operations. If a recursive function is liable to perform the same operations more than once, it’s useful to have the function store results in a hash table for lookup on future iterations.
+- Hash tables can be used for AI chains, like Markov, to store words and phrases and the words that follow them to produce a random syntax with a realistic (or, as realistic as it can be) syntax.
+- Hash tables can be used to store first appearances of values so that duplicates can be identified in constant time.
 
 We expect you to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
@@ -35,12 +56,12 @@ We expect you to be able to answer questions in these areas. Your responses cont
 
 ### Task 1: Project Set-Up
 
-- [ ] Create a forked copy of this project
-- [ ] Add your team lead as a collaborator on Github
-- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!)
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
-- [ ] Push commits: git push origin `<firstName-lastName>`
+- [x] Create a forked copy of this project
+- [x] Add your team lead as a collaborator on Github
+- [x] Clone your OWN version of the repository (Not Lambda's by mistake!)
+- [x] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
+- [x] Push commits: git push origin `<firstName-lastName>`
 
 ### Task 2: Project Requirements
 
