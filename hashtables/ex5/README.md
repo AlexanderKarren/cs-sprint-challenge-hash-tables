@@ -22,7 +22,7 @@ queries = [
 
 Example return value:
 
-```
+```python
 [ "/usr/local/share/foo.txt", "/usr/bin/ls", "/home/davidlightman/foo.txt" ]
 ```
 
